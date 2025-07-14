@@ -19,7 +19,9 @@ export class UsersService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    return this.prismaService.user.findFirst({
+      where: { id: Number(id) }
+    });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
