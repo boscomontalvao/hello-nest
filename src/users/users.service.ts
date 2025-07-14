@@ -7,7 +7,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 @Injectable()
 export class UsersService {
   constructor(private readonly prismaService: PrismaService) {}
-
+  private teste: string;
   create(createUserDto: CreateUserDto) {
     return this.prismaService.user.create({
       data: createUserDto,
