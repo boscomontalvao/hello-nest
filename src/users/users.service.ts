@@ -34,6 +34,6 @@ export class UsersService {
   }
 
   remove(id: number) {
-    return `QUALQUER COISA LMAO`;
+    return `QUALQUER COISA LMAO ALTERADO MAIS UMA COISA`;
   }
 }
