@@ -19,7 +19,9 @@ export class UsersService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    return this.prismaService.user.findFirst({
+      where: { id: Number(id) }
+    });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
@@ -32,6 +34,6 @@ export class UsersService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    return `QUALQUER COISA LMAO ALTERADO MAIS UMA COISA`;
   }
 }
