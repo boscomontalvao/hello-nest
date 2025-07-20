@@ -40,8 +40,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       
-      - name: "Example show SonarQube Quality Gate Status value"
-        run: echo "The Quality Gate status is ${{ steps.sonarqube-quality-gate-check.outputs.quality-gate-status }}"
-
+      - name: Notify on Quality Gate Failure
+        # Condição: Executa SOMENTE se o passo 'sonarqube-quality-gate-check' FALHOU
+        if: ${{ always() && steps.sonarqube-quality-gate-check.outcome == 'failure' }}
+        run: |
+          echo "::error::🚨 The SonarQube Quality Gate failed! Your code needs review to meet quality standards."
 
 
