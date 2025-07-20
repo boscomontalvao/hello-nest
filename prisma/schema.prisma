@@ -9,9 +9,18 @@ datasource db {
 }
 
 model User {
-  id    Int     @default(autoincrement()) @id
-  email String  @unique
-  name  String?
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  name     String?
   nickname String?
+
   @@map("users")
+}
+
+model Endereco {
+  id     Int    @id @default(autoincrement())
+  rua    String
+  numero Int
+  
+  @@map("endereco")
 }
