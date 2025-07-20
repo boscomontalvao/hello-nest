@@ -40,9 +40,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       
-      - name: Notify on Quality Gate Failure
-        if: ${{ steps.sonarqube-quality-gate-check.outputs.qualityGateStatus == 'ERROR' }}
-        run: echo "::error::🚨 Heads up! Your pull request currently has some quality issues identified by SonarQube."
+      - name: "Example show SonarQube Quality Gate Status value"
+        run: echo "The Quality Gate status is ${{ steps.sonarqube-quality-gate-check.outputs.quality-gate-status }}"
 
 
 
