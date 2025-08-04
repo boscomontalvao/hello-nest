@@ -33,6 +33,9 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+        with:
+          args: >
+            -Dsonar.eslint.eslintconfigpath=./eslint.config.sonarqube.mjs
 
       - name: Wait for Quality Gate status
         id: sonarqube-quality-gate-check
