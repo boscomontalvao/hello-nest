@@ -1,6 +1,6 @@
 name: Lint and SonarQube Analysis
 
-on: [pull]
+on: [push]
 
 jobs:
   code-analysis:
