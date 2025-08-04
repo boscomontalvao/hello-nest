@@ -1,4 +1,3 @@
-// eslint.config.sonarqube.mjs
 import hiporepo from 'eslint-config-hiporepo';
 
 export default [
